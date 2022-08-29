@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>src/jircd/threads/IRCWorker.java</url>
+            <bookmark id="1">
+                <name/>
+                <line>33</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/Users/ultasun/src/NetBeansProjects/Chatland/chatland-jircd/src/chatland/threads/Main.java</file>
+            <file>file:/Users/ultasun/src/NetBeansProjects/Chatland/chatland-jircd/src/chatland/ChatLand.java</file>
+            <file>file:/Users/ultasun/src/NetBeansProjects/Chatland/chatland-jircd/src/chatland/Message.java</file>
+            <file>file:/Users/ultasun/src/NetBeansProjects/Chatland/chatland-jircd/src/chatland/threads/ClientOutput.java</file>
+            <file>file:/Users/ultasun/src/NetBeansProjects/Chatland/chatland-jircd/src/chatland/Channel.java</file>
+            <file>file:/Users/ultasun/src/NetBeansProjects/Chatland/chatland-jircd/src/chatland/IRCHandler.java</file>
+            <file>file:/Users/ultasun/src/NetBeansProjects/Chatland/chatland-jircd/src/chatland/threads/ClientInput.java</file>
+            <file>file:/Users/ultasun/src/NetBeansProjects/Chatland/chatland-jircd/src/chatland/threads/IRCWorker.java</file>
+        </group>
+    </open-files>
+</project-private>
