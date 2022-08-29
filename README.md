@@ -2,7 +2,7 @@
 
 *ChatLand* is an [*Internet Relay Chat*](https://datatracker.ietf.org/doc/rfc2812/) server written in [*Java*](https://docs.oracle.com/javase/tutorial/index.html). This was a homework assignment completed as part of the *Advanced Java* course at [*Bloomsburg University*](https://www.bloomu.edu/academics/programs/computer-science-bs) for [*Dr. Youmin Lu*](https://www.bloomu.edu/people-directory/youmin-lu), while I was enrolled as a student in Fall of 2010.
 
-Criteria for the assignment was to write a [*thread-safe*](https://docs.oracle.com/javase/tutorial/essential/concurrency/index.html), [*multi-user*](https://en.wikipedia.org/wiki/Internet_Relay_Chat) system to utilize [*sockets*](https://en.wikipedia.org/wiki/Network_socket).  The server utilizes [*intrinsic locks*](https://docs.oracle.com/javase/tutorial/essential/concurrency/locksync.html) and [*guarded blocks*]() (i.e., `Object.wait()` and `Object.notifyAll()`) to achieve CPU-efficient concurrency.
+Criteria for the assignment was to write a [*thread-safe*](https://docs.oracle.com/javase/tutorial/essential/concurrency/index.html), [*stateful multi-user*](https://en.wikipedia.org/wiki/Internet_Relay_Chat) system to utilize [*sockets*](https://en.wikipedia.org/wiki/Network_socket).  The server utilizes [*intrinsic locks*](https://docs.oracle.com/javase/tutorial/essential/concurrency/locksync.html) and [*guarded blocks*]() (i.e., `Object.wait()` and `Object.notifyAll()`) to achieve CPU-efficient concurrency.
 
 # Installing
 
@@ -24,6 +24,7 @@ There are `2 + (userCount * 2)` [*threads*](https://docs.oracle.com/javase/7/doc
 
 #### Explanation Notes
 - Each connected client has its own [`IRCHandler`](https://github.com/ultasun/chatland/blob/3a95e6bbcdae05b55b49de6e96b773d5bd7c2ebd/src/chatland/IRCHandler.java).
+	- The `IRCHandler` may be thought of as the bridge between the two dedicated client threads (`ClientInput`, `ClientOutput`), and the `Message` processing `IRCWorker` thread.
 - There is one worker thread ([`IRCWorker`](https://github.com/ultasun/chatland/blob/3a95e6bbcdae05b55b49de6e96b773d5bd7c2ebd/src/chatland/threads/IRCWorker.java)) to update the state of the *IRC* server as it processes the `Message` objects from the client queues.
     - After significant adjustment, it would be possible to have multiple `IRCWorker` threads to increase throughput.
 - The server does not utilize any *thread pools*.
