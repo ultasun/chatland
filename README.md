@@ -10,7 +10,7 @@ The easiest way to run *ChatLand* is to build and run it within [*NetBeans*](htt
 1. Clone this repository,
 2. Open the project in *NetBeans*,
 3. Run the project!
-    - The server will listen for *IRC* client connections on TCP port is `7776`.
+    - The server will listen for *IRC* client connections on TCP port `7776`.
 
 ***ChatLand* is alpha quality software**, it was a homework assignment!
 
