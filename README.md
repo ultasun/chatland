@@ -1,18 +1,25 @@
 # Chatland
 
-*ChatLand* is an [*Internet Relay Chat*](https://datatracker.ietf.org/doc/rfc2812/) server written in [*Java*](https://docs.oracle.com/javase/tutorial/index.html). This was a homework assignment completed as part of the *Advanced Java* course at [*Bloomsburg University*](https://www.bloomu.edu/academics/programs/computer-science-bs) for [*Dr. Youmin Lu*](https://www.bloomu.edu/people-directory/youmin-lu), while I was enrolled as a student in Fall of 2010.
+*ChatLand* is an [*Internet Relay Chat*](https://datatracker.ietf.org/doc/rfc2812/) server written in [*Java*](https://docs.oracle.com/javase/tutorial/index.html). This was a homework assignment completed as part of the *Advanced Java* course at [*Bloomsburg University*](https://www.bloomu.edu/academics/programs/computer-science-bs) for [*Dr. Youmin Lu*](https://www.bloomu.edu/people-directory/youmin-lu), as a student, in Fall of 2010.
 
-Criteria for the assignment was to write a [*thread-safe*](https://docs.oracle.com/javase/tutorial/essential/concurrency/index.html), [*stateful multi-user*](https://en.wikipedia.org/wiki/Internet_Relay_Chat) system to utilize [*sockets*](https://en.wikipedia.org/wiki/Network_socket).  The server utilizes [*intrinsic locks*](https://docs.oracle.com/javase/tutorial/essential/concurrency/locksync.html) and [*guarded blocks*]() (i.e., `Object.wait()` and `Object.notifyAll()`) to achieve CPU-efficient concurrency.
+Criteria for the assignment was to write a [*thread-safe*](https://docs.oracle.com/javase/tutorial/essential/concurrency/index.html), [*stateful multi-user*](https://en.wikipedia.org/wiki/Internet_Relay_Chat) system to utilize [*sockets*](https://en.wikipedia.org/wiki/Network_socket).  The server utilizes [*intrinsic locks*](https://docs.oracle.com/javase/tutorial/essential/concurrency/locksync.html) and [*guarded blocks*]() (i.e., `Object.wait()` and `Object.notifyAll()`) to achieve CPU-efficient concurrency. The author personally selected *IRC* as a theme for this assignment.
+
+# RFC 1459
+This server partially implements [*RFC 1459*](https://www.ietf.org/rfc/rfc1459.txt). The majority of the protocol is not implemented, but enough is implemented to support very primitive chat use. 
+
+The server has been tested with [*irssi*](https://irssi.org/) and [*XChat*](https://simple.wikipedia.org/wiki/XChat).
 
 # Installing
-
 The easiest way to run *ChatLand* is to build and run it within [*NetBeans*](https://netbeans.apache.org).
 1. Clone this repository,
 2. Open the project in *NetBeans*,
 3. Run the project!
-    - The server will listen for *IRC* client connections on TCP port `7776`.
+ - The server will listen for *IRC* client connections on TCP port `7776`.
+ - Please [connect **at least two** users to the server after start-up](https://github.com/ultasun/chatland/issues/3).
 
-***ChatLand* is alpha quality software**, it was a homework assignment!
+***ChatLand is alpha quality software***, it was a homework assignment. Some issues are recorded in the repository's [issue tracker](https://github.com/ultasun/chatland/issues).
+
+As of now there is no serious intention to [deliver an executable](https://launch4j.sourceforge.net/docs.html) for general purpose use.
 
 # Threads Explanation
 There are `2 + (userCount * 2)` [*threads*](https://docs.oracle.com/javase/7/docs/api/java/lang/Thread.html) running at any given time.
